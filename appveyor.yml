@@ -1,12 +1,9 @@
-init:
-  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-
 before_build:
   - cd sample-website
   - nuget restore
 
 artifacts:
-  - path: sample-website\bin
+  - path: sample-website\sample-website\bin
     name: sample-website
     type: zip
 
