@@ -3,7 +3,7 @@ before_build:
   - nuget restore
 
 artifacts:
-  - path: .\sample-website\bin
+  - path: .\sample-website\bin\
     name: sample-website
     type: zip
 
