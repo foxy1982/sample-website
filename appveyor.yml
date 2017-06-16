@@ -2,6 +2,11 @@ before_build:
   - cd sample-website
   - nuget restore
 
+artifacts:
+  - path: .\sample-website\bin
+    name: sample-website
+    type: zip
+
 deploy:
   provider: S3
   bucket: sample-website-deployments
@@ -10,3 +15,4 @@ deploy:
     secure: LxN1fMAVOd277FGzF2EB3laBGWV2toI7hqqHaAeeWA4=
   secret_access_key:
     secure: U/ky8Ll3W7n/SMYnonlO2ggS/aNpCblHOtGuZJaPxiI/c2gdLmOQhgsGA2QV3Rgf
+  artifact: sample-website
